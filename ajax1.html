@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Introducció AJAX</title>
+</head>
+<body>
+<h1>Creació dinàmica de pàgines web amb peticions AJAX</h1>
+
+<div id="contingut"></div>
+
+</body>
+
+
+<script type="application/javascript">
+
+
+    function descarregarArxiu() {
+        let peticio_http = null;
+        if (window.XMLHttpRequest) {
+            peticio_http = new window.XMLHttpRequest();
+        } else if (window.ActiveXObject) {
+            peticio_http = new window.ActiveXObject("Microsoft.XMLHTTP");
+        }
+        peticio_http.onreadystatechange = function () {
+            console.log(peticio_http.readyState);
+            if (peticio_http.readyState === 4) {
+                if (peticio_http.status === 200) {
+                    let div = document.getElementById("contingut")
+                    div.innerHTML = peticio_http.responseText;
+                }
+            }
+        };
+        // Per últim realitzem la petició HTTP (Hem de )
+        peticio_http.open('GET', './Salutacions.txt', true);
+        peticio_http.send(null);
+    }
+
+    window.onload = descarregarArxiu;
+
+
+</script>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Activitat 1</title>
+    <style type="text/css">
+      body { font: 13px Arial, Helvetica, sans-serif; }
+      h2 { margin-bottom: 0; font-size: 1.2em; }
+      #recurs, #enviar { padding: .3em; font-size: 1.2em; }
+      #principal { float: left; width: 70%; }
+      #secundari { float: right; width: 25%; }
+      #continguts, #estats, #capsaleres, #codi {
+        border: 2px solid #CCC;
+        background: #FAFAFA;
+        padding: 1em;
+        white-space: pre;
+      }
+      #continguts {
+        min-height: 400px;
+        max-height: 600px;
+        overflow: scroll;
+      }
+      #estats { min-height: 200px; }
+      #capsaleres { min-height: 200px; }
+      #codi { min-height: 100px; font-size: 1.5em; }
+    </style>
+
+  </head>
+  <body>
+    <form action="#">
+      URL: <input type="text" id="recurs" size="70" />
+      <input type="button" id="enviar" value="Mostrar contingut" />
+    </form>
+
+    <div id="principal">
+      <h2>Contingut de l'arxiu:</h2>
+      <div id="continguts"></div>
+      
+      <h2>Capçaleres HTTP de la resposta del servidor:</h2>
+      <div id="capsaleres"></div>
+    </div>
+    
+    <div id="secundari">
+      <h2>Estats de la petició:</h2>
+      <div id="estats"></div>
+      
+      <h2>Codi d'estat:</h2>
+      <div id="codi"></div>
+    </div>
+
+    <script src="js/Activitat1.js"></script>
+
+
+  </body>
+</html>
